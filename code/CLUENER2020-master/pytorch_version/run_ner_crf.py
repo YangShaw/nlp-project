@@ -375,8 +375,9 @@ def main():
     args.output_dir = args.output_dir + '{}'.format(args.model_type)
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
-    time_ = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
-    init_logger(log_file=args.output_dir + f'/{args.model_type}-{args.task_name}-{time_}.log')
+    time_ = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+    logger1 = init_logger(log_file=args.output_dir + f'/{args.model_type}-{args.task_name}-{time_}.log')
+    logger1.info("abc")
     if os.path.exists(args.output_dir) and os.listdir(
             args.output_dir) and args.do_train and not args.overwrite_output_dir:
         raise ValueError(
@@ -419,6 +420,11 @@ def main():
         torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
     args.model_type = args.model_type.lower()
     config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
+
+    print("__________________")
+    print(args.config_name)
+    print(args.cache_dir)
+    print("1111111111111111111")
     config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
                                           num_labels=num_labels, cache_dir=args.cache_dir if args.cache_dir else None, )
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name if args.tokenizer_name else args.model_name_or_path,
@@ -426,6 +432,7 @@ def main():
                                                 cache_dir=args.cache_dir if args.cache_dir else None, )
     model = model_class.from_pretrained(args.model_name_or_path, from_tf=bool(".ckpt" in args.model_name_or_path),
                                         config=config, cache_dir=args.cache_dir if args.cache_dir else None)
+
     if args.local_rank == 0:
         torch.distributed.barrier()  # Make sure only the first process in distributed training will download model & vocab
 

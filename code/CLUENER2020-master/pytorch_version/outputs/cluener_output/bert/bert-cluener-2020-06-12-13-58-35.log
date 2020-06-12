@@ -1,0 +1,7 @@
+abc
+Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+Model name 'E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming 'E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base' is a path or url to a directory containing tokenizer files.
+Didn't find file E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base\vocab.txt. We won't load it.
+Didn't find file E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base\added_tokens.json. We won't load it.
+Didn't find file E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base\special_tokens_map.json. We won't load it.
+Didn't find file E:/desktopfiles/course/nlp/nlp-project/code/CLUENER2020-master/pytorch_version/prev_trained_model/bert-base\tokenizer_config.json. We won't load it.
